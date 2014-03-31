@@ -1,0 +1,88 @@
+
+.top-bar .name h1 a {
+    color: #777777;
+}
+
+.top-bar .name h1 a:hover {
+    color: #333333;
+}
+
+.top-bar {
+    background: transparent;
+}
+
+.contain-to-grid {
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+    box-shadow: 0 1px 10px rgba(FF, FF, FF, 0.1);
+}
+
+.top-bar-section li.hover > a:not(.button) {
+    background: #F2F2F2;
+    color: #777777;
+}
+.top-bar-section li:not(.has-form) a:not(.button) {
+    color: #777777;
+    background: transparent;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F2F2F2);
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background: #E5E5E5;
+    color: #555555;
+}
+
+.top-bar-section .has-dropdown > a:after {
+    border-color: #777777 transparent transparent transparent;
+}
+.top-bar-section .dropdown li a {
+    color: #777777;
+    background: #E5E5E5;
+}
+.top-bar-section .dropdown li label {
+    background: #E5E5E5;
+}
+.top-bar-section > ul > .divider, 
+.top-bar-section > ul > [role="separator"] {
+    border-right: solid 1px #E1E1E1;
+}
+.top-bar-section .divider, 
+.top-bar-section [role="separator"] {
+    border-top: 1px solid #E1E1E1;
+}
+.top-bar-section .has-form {
+    background: #E5E5E5;
+}
+
+.top-bar-section .dropdown {
+    box-shadow: 0 1px 10px rgba(FF, FF, FF, 0.1);
+}
+
+
+
+dl {
+    background: none repeat scroll 0 0 #FBFAF9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+dl:hover {
+    box-shadow: 0 0 8px #AAAAAA;
+}
+
+dl dt {
+    background: none repeat scroll 0 0 #FBFAF9;
+    padding: 10px 0;
+    margin: 0;
+}
+
+dl dd {
+    background: none repeat scroll 0 0 #F0EDE9;
+    border-top: 1px solid #999999;
+    margin: 0;
+    padding: 4px 6px;
+}
+
+dl dd img {
+    border: 1px solid #444444;
+    padding: 7px;
+    box-shadow: 0 1px 10px rgba(FF, FF, FF, 0.1) inset;
+}

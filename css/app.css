@@ -1,0 +1,294 @@
+
+img.kama {
+    vertical-align: text-top;
+    content:url("/images/kamaw.png");
+    background-image:url("/images/kamaw.png");
+    width:13px;
+    height:14px; 
+}
+img.arr_up {
+    /* vertical-align: text-top; */
+    content:url("/images/arr_up.png");
+    background-image:url("/images/arr_up.png");
+    width:12px;
+    height:12px; 
+}
+img.arr_egal {  
+    /* vertical-align: text-top; */
+    content:url("/images/arr_egal.png");
+    background-image:url("/images/arr_egal.png");
+    width:12px;
+    height:12px; 
+}
+img.arr_down {
+    /* vertical-align: text-top; */
+    content:url("/images/arr_down.png");
+    background-image:url("/images/arr_down.png");
+    width:12px;
+    height:12px; 
+}
+img.craftable {
+    content:url("/images/craft.png");
+    background-image:url("/images/craft.png");
+    width:12px;
+    height:14px; 
+}
+img.category {
+    border: 1px solid #008cba;
+    /*background-color: #D0D0D0;  */
+    width:25px;
+    height:25px; 
+}
+button.micro, .button.micro {
+    padding: 4px;
+    margin: 1px;
+    border: 1px solid #b6edff;  
+}
+button.nano, .button.nano {
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid;  
+}
+.button.nano img.category  {
+    border: 0px;
+}
+button.secondary.selected, .button.secondary.selected {
+    background: none;
+}
+ul.ingredients li {
+    margin-left:6px;
+    font-size:80%;
+}
+ul.ingredients {
+    margin:0 0 0 2px;
+}
+
+ul.pagination {
+    height: auto;
+}
+
+span.infobulle {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+}
+
+.f-dropdown.content.infobulle {
+    max-width: 220px;
+}
+.f-dropdown.content.infobulleLarge {
+    max-width: 310px;
+}
+
+div#container svg > :last-child {  
+    /* hide copyright on charts */
+    display:none;
+}
+input[type="file"], input[type="checkbox"], input[type="radio"], select {
+    margin:0;
+}
+input.small, select.small {
+    margin:1px;
+    padding:1px;
+    width:initial;
+    height: 1.2rem;
+}
+fieldset {
+    padding: 0 1.25rem 0.25rem 1.25rem;
+    margin: 0.5rem;
+}
+table tr th, table tr td {
+    padding: 0.2rem 0.2rem;
+}
+/**************************************************/
+/*          C U S T O M   C O L O R S             */
+/**************************************************/
+body {
+    color: #a1a1a1;
+    background-color: #2a4a85;
+}
+
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    color: #868686;
+}
+
+.panel.callout a:hover {
+    color: #007095;
+}
+
+/*background-color: #2A4A85;*/
+button.nano, .button.nano, button.micro, .button.micro {
+    border-color: #1a416e; /* very dark blue */
+}
+
+button.secondary.selected:hover, .button.secondary.selected:hover {
+    background-color: #213B67;  /* bg - 20 lum */
+}
+
+/*#0f7bcf*/ 
+
+footer.row {
+    font-size: 0.8em;
+}
+
+div.row label {
+    color: #D0D0D0;
+}
+fieldset legend {
+    background: none;
+    color:#E0E0E0;
+}
+ul.pagination li a {
+    color:white;
+}
+span.level {
+    font-size:60%;
+    color:Gray;
+}
+span.infobulle span.level {
+    font-size:60%;
+    color:gray;
+}
+table {
+    background:none;
+    color:white;
+    margin:0 auto;
+    border-color:darkgray;
+}
+table thead, table tfoot {
+    background: #213B67;  /* bg - 20 lum */
+}
+table tbody tr:nth-of-type(even) {
+    background: #3560A1;  /* bg + 20 lum */
+}
+table tbody tr:nth-of-type(odd) {
+    background: #2A4A85;  
+}
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+    color:white;
+}
+table tr th, table tr td {
+    color:LightGray;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+.panel.callout {
+    /*background : #3560A1;  bg + 20 lum */
+    color: #000000;
+    background: #ffffff;
+    border: 4px #000000 solid;
+}
+
+.f-dropdown.content {
+    background: #3560A1; /* bg + 20 lum */
+}
+span.droppable {
+    color:DeepSkyBlue;
+}
+span.collectable {
+    color:Lime;
+}
+span.green {
+    color:Lime;
+}
+span.red {
+    color:tomato;
+}
+
+
+ul.menu_short {
+    padding-top: 20px;
+}
+
+.button {
+	background: -moz-linear-gradient(
+		top,
+		#50709d 0%,
+		#50709d 50%,
+		#49638c 50%,
+		#3a4a6b);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#50709d),
+		color-stop(0.50, #50709d),
+		color-stop(0.50, #49638c),
+		to(#3a4a6b));
+	border: 1px solid #26385c;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 5px 1px 6px rgba(255,255,255,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 5px 1px 5px rgba(255,255,255,0.6);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 5px 1px 5px rgba(255,255,255,0.6);
+	text-shadow:
+		1px 1px 4px rgba(000,000,000,0.8),
+		1px 1px 1px rgba(0,0,0,1);
+}
+
+.button:hover {
+	background: -moz-linear-gradient(
+		top,
+		#4d6c97 0%,
+		#4d6c97 50%,
+		#465f87 50%,
+		#3a4a6b);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#4d6c97),
+		color-stop(0.50, #4d6c97),
+		color-stop(0.50, #465f87),
+		to(#3a4a6b));
+}
+
+.button.active {
+	background: -moz-linear-gradient(
+		top,
+		#4d6c97 0%,
+		#4d6c97 50%,
+		#465f87 50%,
+		#3a4a6b);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#4d6c97),
+		color-stop(0.50, #4d6c97),
+		color-stop(0.50, #465f87),
+		to(#3a4a6b));
+	-moz-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 5px 1px 6px rgba(000,000,000,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 5px 1px 5px rgba(000,000,000,0.6);
+    box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 5px 1px 5px rgba(000,000,000,0.6);
+}
+
+.button.diamond {
+    padding: 10px 15px 10px 50px;
+}
+
+.button.diamond:before {
+    content: "";
+    display: block;
+    height: 35px;
+    width: 35px;
+    background: transparent url('../images/ico_diamond.png') no-repeat 0 0;
+    position: absolute;
+    top: -7px;
+    left: 10px;
+    opacity: 0.7;
+}
+
+.button.diamond:hover:before,
+.button.diamond.current:before {
+    opacity: 1;
+}
