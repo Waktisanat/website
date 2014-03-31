@@ -8,7 +8,6 @@
   include_once('parts/display.php' );
 
 
-
 	$limit =(isset($_GET['limit'])) ? $_GET['limit'] : 90;
 	$page = (isset($_GET{'page'} )) ? $_GET{'page'} : 0;
 	$offset = $limit * $page ;
