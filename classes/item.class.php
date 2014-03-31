@@ -82,9 +82,15 @@ class Item {
     private function init($resp) {
         $this->id = $resp['id'];
         $this->name = $resp['name'];
-        $this->type1 = self::$ITEMTYPES[$resp['type1']]; 
-        $this->type2 = self::$ITEMTYPES[$resp['type2']]; 
-        $this->type3 = self::$ITEMTYPES[$resp['type3']]; 
+        if (!is_null($resp['type1'])) { 
+            $this->type1 = self::$ITEMTYPES[$resp['type1']];
+        }
+        if (!is_null($resp['type2'])) { 
+            $this->type2 = self::$ITEMTYPES[$resp['type2']];
+        }
+        if (!is_null($resp['type3'])) { 
+            $this->type3 = self::$ITEMTYPES[$resp['type3']];
+        }
         $this->level = $resp['level'];
         $this->off_id = $resp['off_id'];
         $this->image = $resp['image'];

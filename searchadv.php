@@ -113,7 +113,7 @@
     print "<option ></option>";
     foreach($caracs as $car) {
         //print "<a class=\"button nano secondary radius\" href=\"?\">";
-        print "<option value=\"".$car->id."\" style=\"background-image:url(./images/carac/".$car->image.");\" >";
+        print "<option value=\"".$car->id."\" style=\"background-image:url('/images/carac/".$car->image."');\" >";
         //print "<img src=\"/images/carac/".$car->image."\" class=\"category radius\" title=\"\" alt=\"\" >";
         print $car->name;
         print "</a> ";
