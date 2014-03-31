@@ -2,6 +2,7 @@
 
 class Caracteristic {
     
+    var $id;
     var $effect;
     var $name;
     var $image;
@@ -12,6 +13,9 @@ class Caracteristic {
             $this->name = $record['name'];
             if (!is_null($record['image'])) {
                 $this->image = $record['image'];
+            }
+            if (!is_null($record['id'])) {
+                $this->id = $record['id'];
             }
         }
     }

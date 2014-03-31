@@ -68,7 +68,7 @@
     if (!is_null($t2)) {
         $prefix = "type1=".$t1."&type2=".$t2;
     }
-    print "<a class=\"button nano secondary selected radius\" href=\"?".$prefix."\" >";
+    print "<a class=\"button nano secondary active radius\" href=\"?".$prefix."\" >";
     print_itemtype($item, $type);
     print "</a>";
   }
@@ -109,11 +109,16 @@
   }
   
   function print_all_caracteristics($caracs) {
+    print "<select name=\"carac0\" class=\"small\"/>";
+    print "<option ></option>";
     foreach($caracs as $car) {
-        print "<a class=\"button nano secondary radius\" href=\"?\">";
-        print "<img src=\"/images/carac/".$car->image."\" class=\"category radius\" title=\"".$car->name."\" alt=\"".$car->name."\" >";
+        //print "<a class=\"button nano secondary radius\" href=\"?\">";
+        print "<option value=\"".$car->id."\" style=\"background-image:url(./images/carac/".$car->image.");\" >";
+        //print "<img src=\"/images/carac/".$car->image."\" class=\"category radius\" title=\"\" alt=\"\" >";
+        print $car->name;
         print "</a> ";
     }
+    print "</select>";
   }
   
 ?>
@@ -124,13 +129,6 @@
 <body>
 
 <?php include( 'page/page_header.php' ); ?>
-    <div class="row">
-        <div class="large-12 columns">
-            <!-- h1>Recherche avancée :</h1 -->
-			
-			<a class="button tiny radius right" href="/">Retour à l'accueil</a>
-        </div>
-    </div>
 
     <div class="row">
         <form class="custom">
@@ -141,6 +139,19 @@
                         <table style="border:0;" cellspacing=0 cellpadding=0 ><tr>
                         <td nowrap style="line-height: 27px;">Type :</td>
                         <?php print_categoryFilter($type1, $type2, $type3, $dummy) ?>
+                        </tr></table>
+                    </div>
+                    <div style="float:left;margin-right:10px;">
+                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
+                        <td nowrap style="line-height: 27px;">Level :</td> 
+                        <td><input type=text style="width:40px" class="small" name=lvlmin placeholder="min" /></td>
+                        <td><input type=text style="width:40px" class="small" name=lvlmax placeholder="max" /></td>
+                        </tr></table>
+                    </div>
+                    <div style="float:left;height:33px;margin-right:10px;">
+                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
+                        <td nowrap style="line-height: 27px;">Mot clef :</td> 
+                        <td><input type=text style="width:130px" class="small" name=key /></td>
                         </tr></table>
                     </div>
                     <div style="float:left;margin-right:10px;">
@@ -157,19 +168,6 @@
                             <option value=5>Relique</option>
                         </select> 
                         </td></tr></table>
-                    </div>
-                    <div style="float:left;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Level :</td> 
-                        <td><input type=text style="width:40px" class="small" name=lvlmin placeholder="min" /></td>
-                        <td><input type=text style="width:40px" class="small" name=lvlmax placeholder="max" /></td>
-                        </tr></table>
-                    </div>
-                    <div style="float:left;height:33px;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Mot clef :</td> 
-                        <td><input type=text style="width:130px" class="small" name=key /></td>
-                        </tr></table>
                     </div>
                     <div style="float:left;height:33px;margin-right:10px;">
                         <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
