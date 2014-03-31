@@ -48,7 +48,7 @@
 
   function print_itemtype($item, $type) {
      $url =  $item->get_category_img_url($type);
-     print "<img src=\"".$url."\" class='category radius' title=\"".$type."\" alt=\"".$type."\" >";
+     print "<img src=\"./".$url."\" class='category radius' title=\"".$type."\" alt=\"".$type."\" >";
   } 
   
 ?>

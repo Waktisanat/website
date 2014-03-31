@@ -50,7 +50,7 @@
                         <input type="text" id=item name=item placeholder="Chercher...">
                     </div>
                     <div class="small-1 columns" style="padding:0;">
-                        <span class="postfix"><img src="/images/search_icon.gif" style="cursor:pointer" onclick="submit();"></span>
+                        <span class="postfix"><img src="./images/search_icon.gif" style="cursor:pointer" onclick="submit();"></span>
                     </div>
                     
                 </form>

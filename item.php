@@ -69,7 +69,7 @@
 		<div class="large-4 medium-6 columns">
 			<div class="callout panel radius">				
 				<?php
-          print "<a href=\"?id=".$currentItem->id."&fav=".$favtg."\" class=\"right\"><img src=\"/images/fav".$fav.".png\"></a>" ;
+          print "<a href=\"?id=".$currentItem->id."&fav=".$favtg."\" class=\"right\"><img src=\"./images/fav".$fav.".png\"></a>" ;
           
 					/* Type - Catégorie de l'item */
 					if( !empty( $currentItem->type1 ) )
@@ -101,7 +101,7 @@
 						{
 							echo "<li>";
               if (!is_null($carac->image)) {
-                  print "<img src=\"/images/carac/".$carac->image."\" >";
+                  print "<img src=\"./images/carac/".$carac->image."\" >";
               }
               print $carac->effect ." ". $carac->name."</li>";
 						}
@@ -132,8 +132,8 @@
               } else {
                   print "<img class=\"arr_egal\" >";
               }
-              print "<a class=\"button micro secondary radius right\" href=\"hdvhistory.php?id=".$currentItem->id."\">";
-              print "<img src=\"/images/chart.png\" ></a>";
+              print "<a class=\"button micro secondary radius right\" href=\"./hdvhistory.php?id=".$currentItem->id."\">";
+              print "<img src=\"./images/chart.png\" ></a>";
           }
           
           
@@ -160,44 +160,6 @@
         			print "<p><br/><a href=".$url." target='_blank'>Voir sur l'encyclopédie Officielle</a></p>";
 				?>
 			</div>
-			
-			<!--
-			<div class="callout panel">
-                <h3>Items  (ressources)</h3>
-    
-                <ul>
-                    <li>id</li>
-                    <li>Nom</li>
-                    <li>Niveau</li>
-                    <li>Description</li>
-                    <li>Type</li>
-                    <li>Image</li>
-                    <li>Rareté</li>
-                    <li>Echangeable</li>
-                    <li>Dropable => Monstre => Taux de drop</li>
-                    <li>Craftable => Recette</li>
-                </ul>
-            </div>
-            
-            <div class="callout panel">
-                <h3>Equipement</h3>
-        
-                <ul>
-                    <li>id</li>
-                    <li>Nom</li>
-                    <li>Niveau</li>
-                    <li>Description</li>
-                    <li>Type</li>
-                    <li>Image</li>
-                    <li>Rareté</li>
-                    <li>Echangeable</li>
-                    <li>Dropable => Monstre => Taux de drop</li>
-                    <li>Craftable => Recette</li>
-                    <li>Caractéristiques</li>
-                    <li>Panoplie associée</li>
-                </ul>
-            </div>
-            -->
 		</div>
 	
 	  <?php

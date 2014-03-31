@@ -84,7 +84,7 @@ ini_set('display_startup_errors','On');
   
   function display_tendency($item) {   
       if (is_object($item->price)) {
-          print "<a href=\"hdvhistory.php?id=".$item->id."\">";
+          print "<a href=\"./hdvhistory.php?id=".$item->id."\">";
           $mid = ($item->price->min+$item->price->max)/2;
           if ($mid < $item->price->avg) {
               print "<img class=\"arr_down\" >";
