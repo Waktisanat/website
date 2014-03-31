@@ -104,7 +104,7 @@ if (is_null($type1)) {
     print_itemtype($item, $list[0]->type3);
 }
 ?>            
-                <a title="Supprimer les filtres" class="right" href="/allitem.php">&times;</a>
+                <a title="Supprimer les filtres" class="right" href="./allitem.php">&times;</a>
             </div>
         </fieldset>
     </div>

@@ -1,35 +1,35 @@
 
 img.kama {
     vertical-align: text-top;
-    content:url("/images/kamaw.png");
-    background-image:url("/images/kamaw.png");
+    content:url("../images/kamaw.png");
+    background-image:url("../images/kamaw.png");
     width:13px;
     height:14px; 
 }
 img.arr_up {
     /* vertical-align: text-top; */
-    content:url("/images/arr_up.png");
-    background-image:url("/images/arr_up.png");
+    content:url("../images/arr_up.png");
+    background-image:url("../images/arr_up.png");
     width:12px;
     height:12px; 
 }
 img.arr_egal {  
     /* vertical-align: text-top; */
-    content:url("/images/arr_egal.png");
-    background-image:url("/images/arr_egal.png");
+    content:url("../images/arr_egal.png");
+    background-image:url("../images/arr_egal.png");
     width:12px;
     height:12px; 
 }
 img.arr_down {
     /* vertical-align: text-top; */
-    content:url("/images/arr_down.png");
-    background-image:url("/images/arr_down.png");
+    content:url("../images/arr_down.png");
+    background-image:url("../images/arr_down.png");
     width:12px;
     height:12px; 
 }
 img.craftable {
-    content:url("/images/craft.png");
-    background-image:url("/images/craft.png");
+    content:url("../images/craft.png");
+    background-image:url("../images/craft.png");
     width:12px;
     height:14px; 
 }
