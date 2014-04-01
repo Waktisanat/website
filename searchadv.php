@@ -5,6 +5,7 @@
   include_once('classes/item.class.php' );
   include_once('parts/pagination.php' );
   include_once('parts/display.php' );
+  include_once('parts/type_filter.php' );
 
 
 
@@ -44,69 +45,6 @@
   
     echo '</div>';    
   }
-  /******************************************************************/
-  function print_type_buttons($item, $types, $t1 = null, $t2 = null) {
-    $prefix = "type1=";
-    if (!is_null($t1)) {
-        $prefix = "type1=".$t1."&type2=";
-    }
-    if (!is_null($t2)) {
-        $prefix = "type1=".$t1."&type2=".$t2."&type3=";
-    }
-    foreach($types as $typ) {
-        $id = $item->getCategoryId($typ);
-        print "<a class=\"button nano secondary radius\" href=\"?".$prefix.$id."\">";
-        print_itemtype($item, $typ);
-        print "</a> ";
-    }
-  }
-  function print_selected_itemtype($item, $type, $t1 = null, $t2 = null) {
-    $prefix = "";
-    if (!is_null($t1)) {
-        $prefix = "type1=".$t1;
-    }
-    if (!is_null($t2)) {
-        $prefix = "type1=".$t1."&type2=".$t2;
-    }
-    print "<a class=\"button nano secondary active radius\" href=\"?".$prefix."\" >";
-    print_itemtype($item, $type);
-    print "</a>";
-  }
-  /******************************************************************/
-  function print_categoryFilter($type1, $type2, $type3, $item) {
-    if (is_null($type1)) {
-        print "<td nowrap >";
-        $types = Item::get_all_type1();
-        print_type_buttons($item, $types);
-    } else if (is_null($type2)) {
-        print "<td nowrap >";
-        print_selected_itemtype($item, $item->type1);
-        $types = Item::get_all_type2_for_type1($type1);
-        if (count($types)>0) {
-            print " &#10151; ";
-            print_type_buttons($item, $types, $type1);
-        }
-    } else if (is_null($type3)) {
-        print "<td nowrap width=\"85px\">";
-        print_selected_itemtype($item, $item->type1);
-        print " &#10151; ";
-        print_selected_itemtype($item, $item->type2, $type1);
-        $types = Item::get_all_type3_for_type2($type2);
-        if (count($types)>0) {
-            print " &#10151; ";
-            print "</td><td>";
-            print_type_buttons($item, $types, $type1, $type2);
-        }
-    } else {
-        print "<td nowrap >";
-        print_selected_itemtype($item, $item->type1);
-        print " &#10151; ";
-        print_selected_itemtype($item, $item->type2, $type1);
-        print " &#10151; ";
-        print_selected_itemtype($item, $item->type3, $type1, $type2);
-    }
-    print "</td>";
-  }
   
   function print_all_caracteristics($caracs) {
     print "<select name=\"carac0\" class=\"small\"/>";
@@ -138,7 +76,7 @@
                     <div style="float:left;margin-right:10px;">
                         <table style="border:0;" cellspacing=0 cellpadding=0 ><tr>
                         <td nowrap style="line-height: 27px;">Type :</td>
-                        <?php print_categoryFilter($type1, $type2, $type3, $dummy) ?>
+                        <?php print_categoryFilter($type1, $type2, $type3, $dummy, "nano") ?>
                         </tr></table>
                     </div>
                     <div style="float:left;margin-right:10px;">

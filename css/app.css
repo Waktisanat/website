@@ -34,7 +34,7 @@ img.craftable {
     height:14px; 
 }
 img.category {
-    border: 1px solid #008cba;
+    border: 0px;
     /*background-color: #D0D0D0;  */
     width:25px;
     height:25px; 
@@ -292,4 +292,3 @@ ul.menu_short {
 .button.diamond.current:before {
     opacity: 1;
 }
-
