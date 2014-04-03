@@ -132,7 +132,7 @@
               } else {
                   print "<img class=\"arr_egal\" >";
               }
-              print "<a class=\"button micro secondary radius right\" href=\"./hdvhistory.php?id=".$currentItem->id."\">";
+              print "<a class=\"button micro secondary radius right\" href=\"./hdvhistory.php?id=".$currentItem->id."\" style=\"background:none;\" >";
               print "<img src=\"./images/chart.png\" ></a>";
           }
           
