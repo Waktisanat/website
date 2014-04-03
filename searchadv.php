@@ -17,6 +17,16 @@
 	$type2 = (isset($_GET{'type2'} )) ? $_GET{'type2'} : null;
 	$type3 = (isset($_GET{'type3'} )) ? $_GET{'type3'} : null;
   
+	$lvlmin = (isset($_GET{'lvlmin'} )) ? $_GET{'lvlmin'} : null;
+	$lvlmax = (isset($_GET{'lvlmax'} )) ? $_GET{'lvlmax'} : null;
+	$key = (isset($_GET{'key'} )) ? $_GET{'key'} : null;
+	$rarity = (isset($_GET{'rarity'} )) ? $_GET{'rarity'} : null;
+	$craft = (isset($_GET{'craft'} )) ? $_GET{'craft'} : null;
+	$drop = (isset($_GET{'drop'} )) ? $_GET{'drop'} : null;
+	$recolte = (isset($_GET{'recolte'} )) ? $_GET{'recolte'} : null;
+	$carac0 = (isset($_GET{'carac0'} )) ? $_GET{'carac0'} : null;  
+  
+  
 	$list = Item::get_items_by_type($type1,$type2,$type3);
   $countItem = count($list);
   $dummy = ($countItem > 0) ? $list[0] : new Item();
@@ -69,61 +79,65 @@
 <?php include( 'page/page_header.php' ); ?>
 
     <div class="row">
+      <div class="large-4 medium-6 columns">
         <form class="custom">
             <fieldset>
                 <legend>Recherche Avancée</legend>
                 <div class="row">
-                    <div style="float:left;margin-right:10px;">
-                        <table style="border:0;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Type :</td>
-                        <?php print_categoryFilter($type1, $type2, $type3, $dummy, "nano") ?>
+                    <div style="float:left;width:100%;">
+                        <table style="border:0;width:100%;" cellspacing=0 cellpadding=0 ><tr>
+                            <td align="right" width="21%" style="padding:0;">Type :</td>
+                            <?php print_categoryFilter($type1, $type2, $type3, $dummy, "nano") ?>
                         </tr></table>
+                        
                     </div>
-                    <div style="float:left;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Level :</td> 
-                        <td><input type=text style="width:40px" class="small" name=lvlmin placeholder="min" /></td>
-                        <td><input type=text style="width:40px" class="small" name=lvlmax placeholder="max" /></td>
+                    <div class="left" style="line-height: 27px;width:21%;text-align:right;">
+                      <label style="margin:0;">Level : </label>
+                      <label style="margin:0;">Mot clef : </label>
+                      <label style="margin:0;">Rareté : </label>
+                    </div>
+                    <div class="columns" style="line-height: 27px;padding:0;width:45%;">
+                      <div>
+                        <table style="border:0;width:100%;" cellspacing=0 cellpadding=0 ><tr>
+                          <td style="padding-left:2px;">
+                            <input type=text style="width:100%" class="small" name=lvlmin placeholder="min" /></td> 
+                          <td style="padding-right:0;">
+                            <input type=text style="width:100%" class="small" name=lvlmax placeholder="max" /></td>
                         </tr></table>
-                    </div>
-                    <div style="float:left;height:33px;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Mot clef :</td> 
-                        <td><input type=text style="width:130px" class="small" name=key /></td>
-                        </tr></table>
-                    </div>
-                    <div style="float:left;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td nowrap style="line-height: 27px;">Rareté :</td> 
-                        <td>
-                        <select name="rarity" class="small"/>
-                            <option ></option>
-                            <option value=0>Commun</option>
-                            <option value=1>Inhabituel</option>
-                            <option value=2>Rare</option>
-                            <option value=3>Mythique</option>
-                            <option value=4>Légendaire</option>
-                            <option value=5>Relique</option>
+                      </div>
+                      <div  style="padding-left:4px;">
+                        <input type=text style="width:100%;margin:4px 0;" class="small" name=key />
+                        <select name="rarity" style="width:100%;margin:4px 0;" class="small"/>
+                              <option ></option>
+                              <option value=0>Commun</option>
+                              <option value=1>Inhabituel</option>
+                              <option value=2>Rare</option>
+                              <option value=3>Mythique</option>
+                              <option value=4>Légendaire</option>
+                              <option value=5>Relique</option>
                         </select> 
-                        </td></tr></table>
+                      </div>
                     </div>
-                    <div style="float:left;height:33px;margin-right:10px;">
-                        <table style="border:0;margin:0 auto;" cellspacing=0 cellpadding=0 ><tr>
-                        <td style="line-height: 27px;">Artisanat</td><td><input type=checkbox name=craft /></td>
-                        <td style="line-height: 27px;">Drop</td><td><input type=checkbox name=drop /></td>                             
-                        <td style="line-height: 27px;">Récolte</td><td><input type=checkbox name=recolte /></td>
-                        </tr></table>
-                    </div>
-                </div>
-                <div class="row">
-                    <label>Caractéristiques :</label>
+                    <div class="right" style="line-height: 27px;text-align:right;padding:0;width:30%;">
+                        <label style="margin:0;">Artisanat : <input type=checkbox name=craft value=X /></label>
+                        <label style="margin:0;">Drop : <input type=checkbox name=drop value=X /></label>
+                        <label style="margin:0;">Récolte : <input type=checkbox name=recolte value=X /></label>
+                    </div>                     
+
+
+                    <div class="left">
+                        <label class="left">Caractéristiques :</label>
+                        <div class="right">
                         <?php
                           print_all_caracteristics($caracs);
                         ?>
-                </div>
-               </div>               
+                        </div>
+                    </div>
+                </div>  <!-- /row --> 
+              </div>               
             </fieldset>
         </form>
+        </div>
     </div>
     <div class="row">
         <div class="large-12 medium-12 columns">  

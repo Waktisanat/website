@@ -63,7 +63,7 @@
             <div>
 <?php
         
-        print_categoryFilter($type1, $type2, $type3, $dummy, "micro")
+        print_categoryFilter($type1, $type2, $type3, $dummy, "micro", "&page=".$page)
 ?>            
                 <a title="Supprimer les filtres" class="right" href="./allitem.php">&times;</a>
             </div>

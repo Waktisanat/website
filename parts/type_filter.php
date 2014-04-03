@@ -51,7 +51,7 @@
             print_type_buttons($item, $types, $size, $suffix, $type1);
         }
     } else if (is_null($type3)) {
-        print "<td nowrap width=\"85px\">";
+        print "<td nowrap width=\"90px\">";
         print_selected_itemtype($item, $item->type1, $size, $suffix);
         print " &#10151; ";
         print_selected_itemtype($item, $item->type2, $size, $suffix, $type1);
