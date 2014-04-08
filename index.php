@@ -72,28 +72,7 @@
                     <li><a href="http://docs.google.com/spreadsheet/ccc?key=0Aj3D1TOIZvCAdFZBbjdKQlI1enNjVHB2VzZGTjMyS0E#gid=1">Suivi de Projet</a></li>
                     <li><a href="http://docs.google.com/document/d/1sBwUq6eqS8hd1yzhnrKYGlHCK_ERIEW1D38d7e6CAIQ">Cahier des charges</a></li>
                 </ul>
-
-                </span> 
-            </div>
-
-        
-        <div class="large-6 medium-6 columns">
-            <ul class="button-group">
-                <li><a class="button" href="./allitem.php"><strong><?php echo $countItem; ?></strong><br /> Items</a></li>
-                <li><a class="button" href="./allpano.php"><strong><?php echo $countPano; ?></strong><br /> Panoplies</a></li>
-		        </ul>
-            <div class="row collapse">
-                <form action="search.php" method=GET>
-                    <div class="small-11 columns" style="padding:0;">
-                        <input type="text" id=item name=item placeholder="Chercher...">
-                    </div>
-                    <div class="small-1 columns" style="padding:0;">
-                        <span class="postfix"><img src="./images/search_icon.gif" style="cursor:pointer" onclick="submit();"></span>
-                    </div>
-                    
-                </form>
-            </div>
-
+            </fieldset>
         </div>
     </div>
     
