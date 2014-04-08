@@ -53,7 +53,7 @@
                             <li>Prix : <?php print BDD::get_last_price_import(); ?></li>
                         </ul>
                     </li>
-                    <?php echo $visitor_count;  ?>
+                    <li><?php echo $visitor_count;  ?></li>
                 </ul>
             </fieldset>
 
