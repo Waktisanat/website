@@ -53,6 +53,7 @@
                             <li>Prix : <?php print BDD::get_last_price_import(); ?></li>
                         </ul>
                     </li>
+                    <?php echo $visitor_count;  ?>
                 </ul>
             </fieldset>
 
@@ -71,14 +72,10 @@
                     <li><a href="http://docs.google.com/spreadsheet/ccc?key=0Aj3D1TOIZvCAdFZBbjdKQlI1enNjVHB2VzZGTjMyS0E#gid=1">Suivi de Projet</a></li>
                     <li><a href="http://docs.google.com/document/d/1sBwUq6eqS8hd1yzhnrKYGlHCK_ERIEW1D38d7e6CAIQ">Cahier des charges</a></li>
                 </ul>
-<<<<<<< HEAD
-                <span style="font-size:60%">Dernier import des Items : <?php print BDD::get_last_item_import(); ?><br> 
-                Dernier import des Prix : <?php print BDD::get_last_price_import(); 
-                echo "<br>\n".$visitor_count;
-                ?>
+
                 </span> 
             </div>
-		</div>
+
         
         <div class="large-6 medium-6 columns">
             <ul class="button-group">
@@ -97,9 +94,6 @@
                 </form>
             </div>
 
-=======
-            </fieldset>
->>>>>>> 2e1b24078c6b03693aaaeafb811985fb0a68be33
         </div>
     </div>
     
