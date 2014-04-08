@@ -67,7 +67,7 @@ require_once('classes/panoplie.class.php');
 
   print "</pre>";
   //include('hdvhistory.php');
-  include('searchadv.php');
+  include('favoris.php');
   
   print "fin";  
 ?>

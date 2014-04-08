@@ -8,6 +8,7 @@
   include_once('parts/display.php' );
   include_once('parts/type_filter.php' );
 
+  $currentMenu = "search";
 
 
 	$limit =(isset($_GET["limit"])) ? $_GET["limit"] : 40;
