@@ -215,7 +215,8 @@ span.red {
 }
 
 
-ul.menu_short {
+ul.menu_short,
+.search_short {
     padding-top: 20px;
 }
 
