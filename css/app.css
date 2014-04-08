@@ -99,6 +99,20 @@ fieldset {
 table tr th, table tr td {
     padding: 0.2rem 0.2rem;
 }
+
+.wshadowed {
+    -webkit-filter: drop-shadow( 0px 0px 2px rgba( 255, 255, 255, 1 ));
+    filter: url(shadow.svg#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFFFFF')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#FFFFFF')";
+}
+.shadowed {
+    -webkit-filter: drop-shadow( 0px 0px 2px rgba( 0, 0, 0, 1 ));
+    filter: url(shadow.svg#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#222')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#222')";
+}
+
 /**************************************************/
 /*          C U S T O M   C O L O R S             */
 /**************************************************/
