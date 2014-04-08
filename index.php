@@ -3,9 +3,9 @@
   include_once('classes/panoplie.class.php');
   require_once('classes/recette.class.php'); 
   include_once('parts/display.php' ); 
-?>
 
-<?php $currentMenu = "home"; ?>
+  $currentMenu = "home"; 
+?>
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -35,7 +35,10 @@
                     <li><a href="http://docs.google.com/document/d/1sBwUq6eqS8hd1yzhnrKYGlHCK_ERIEW1D38d7e6CAIQ">Cahier des charges</a></li>
                 </ul>
                 <span style="font-size:60%">Dernier import des Items : <?php print BDD::get_last_item_import(); ?><br> 
-                Dernier import des Prix : <?php print BDD::get_last_price_import(); ?></span> 
+                Dernier import des Prix : <?php print BDD::get_last_price_import(); 
+                echo "<br>\n".$visitor_count;
+                ?>
+                </span> 
             </div>
 		</div>
         
@@ -55,6 +58,7 @@
                     
                 </form>
             </div>
+
         </div>
     </div>
     

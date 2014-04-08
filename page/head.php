@@ -1,3 +1,4 @@
+<?php include_once("simphp-2.0.php");?>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

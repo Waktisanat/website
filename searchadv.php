@@ -44,7 +44,7 @@
             }
         }
     }
-    print " <th>Prix&nbsp;HDV</th>";
+    print " <th style='text-align:center'>Prix&nbsp;HDV</th>";
     print "</tr></thead>";
     print "<tbody>";
          
@@ -231,7 +231,7 @@
         
       <div class="large-8 medium-6 columns">  
           <?php
-              print "<h3> Nombre d'éléments trouvé : ".count($list)."</h3>";
+              print "<h3> Nombre d'éléments trouvés : ".count($list)."</h3>";
               list_all( $limit, $offset, $list, $args, $caracs );
           ?>
       </div>

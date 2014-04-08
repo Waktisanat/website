@@ -7,6 +7,7 @@ require_once('classes/item.class.php');
 require_once('classes/ingredient.class.php');
 require_once('classes/recette.class.php');
 require_once('classes/panoplie.class.php');
+include_once("parts/simphp-2.0.php");
    
   echo ini_get('display_errors');
     
@@ -69,5 +70,7 @@ require_once('classes/panoplie.class.php');
   //include('hdvhistory.php');
   include('favoris.php');
   
-  print "fin";  
+  print "fin";
+  
+  echo $visitor_count;  
 ?>
