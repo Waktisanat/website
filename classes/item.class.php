@@ -166,7 +166,7 @@ class Item {
     /** --------- get the caracteristics of an item ------------- **/                        
     public function get_caracteristics() {
         if (!isset($this->caracs)) {
-            $req = BDD::get()->prepare("SELECT effect,name,image,id FROM ITEMCARACS LEFT JOIN CARACS on ITEMCARACS.carac=CARACS.id WHERE item=".$this->id);
+            $req = BDD::get()->prepare("SELECT CARACS.id,effect,name,image FROM ITEMCARACS LEFT JOIN CARACS on ITEMCARACS.carac=CARACS.id WHERE item=".$this->id);
             $req->execute();
             $response = $req->fetchAll();
             foreach ($response as $r) {
@@ -254,6 +254,10 @@ class Item {
         }
         return 0;
     }
+    /** -------------  get Type Name ------------ **/
+    public function getCategoryName_from_ID($categoryId) {
+        return self::$ITEMTYPES[$categoryId];
+    }
     
     /** -------------  get Type Off id ------------ **/
     public function getCategoryOffId($category) {
@@ -311,6 +315,27 @@ class Item {
         }    
 
         return $caracs;
+    }
+    /** --------- get all rareties ------------- **/ 
+    public static function get_rareties() {
+        if (!isset(self::$RARETIES)) {
+            new Item(); // init
+        }
+        return self::$RARETIES;
+    }
+    
+    /** --------- get all rareties ------------- **/ 
+    public static function get_sql_item_list($sql_req) {
+        $ret = array();
+        $req = BDD::get()->prepare($sql_req); 
+		    $req->execute();
+        $respList = $req->fetchAll();
+        foreach($respList as $resp) {
+            $item = new Item();
+            $item->init($resp);
+            $ret[] = $item;
+        }
+        return $ret;
     }
 
 }                     

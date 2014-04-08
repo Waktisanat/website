@@ -9,21 +9,6 @@
   foreach($favs as $id) {
       $item = new Item($id);
       $fav_list[] = $item; 
-  }
-
-  function display_tendency($item) {   
-      if (is_object($item->price)) {
-          print "<a href=\"./hdvhistory.php?id=".$item->id."\">";
-          $mid = ($item->price->min+$item->price->max)/2;
-          if ($mid < $item->price->avg) {
-              print "<img class=\"arr_down\" >";
-          } else if ($mid > $item->price->avg) {
-              print "<img class=\"arr_up\" >";
-          } else {
-              print "<img class=\"arr_egal\" >";
-          }
-          print "</a>";
-      }      
   } 
 
   
