@@ -13,7 +13,7 @@ class Ingredient {
     /* class constructor */
     public function Ingredient($number_of_items, $item_id) {
         $this->nombre = $number_of_items;
-        if (is_numeric($item)) {
+        if (is_numeric($item_id)) {
             $this->item = new Item($item_id);
         } else if (is_object($item_id)) {
             $this->item = $item_id;

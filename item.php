@@ -12,7 +12,7 @@
 	if (isset($_GET["id"])) {						
 		$currentItem = new Item( $_GET['id'] );
 		$myRecette = Recette::get_recettes_by_item_id($currentItem);
-    if (is_object($myRecette[0])) {
+    if (count( $myRecette ) && is_object($myRecette[0])) {
         $ingredients = $myRecette[0]->load_direct_ingredients();
     }
 		$recettes = Recette::get_recettes_including_item($currentItem);
