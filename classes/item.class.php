@@ -166,7 +166,7 @@ class Item {
     /** --------- get the caracteristics of an item ------------- **/                        
     public function get_caracteristics() {
         if (!isset($this->caracs)) {
-            $req = BDD::get()->prepare("SELECT effect,name,image FROM ITEMCARACS LEFT JOIN CARACS on ITEMCARACS.carac=CARACS.id WHERE item=".$this->id);
+            $req = BDD::get()->prepare("SELECT effect,name,image,id FROM ITEMCARACS LEFT JOIN CARACS on ITEMCARACS.carac=CARACS.id WHERE item=".$this->id);
             $req->execute();
             $response = $req->fetchAll();
             foreach ($response as $r) {
