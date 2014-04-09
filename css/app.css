@@ -122,11 +122,11 @@ body {
 }
 
 a {
-    color: #ffffff;
+    color: #90d3f0;
 }
 
 a:hover {
-    color: #868686;
+    color: #ffffff;
 }
 
 .panel.callout a:hover {
