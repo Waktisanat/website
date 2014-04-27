@@ -1,4 +1,4 @@
-<?php
+<?
 
 /*----------------------------
 
@@ -43,10 +43,10 @@ $type = 2;
 
 // Text to display
 // before all hits.
-$beforeAllText = "Pages affichées : ";
+$beforeAllText = "<li>Pages affichées : ";
 
 // Before unique hits.
-$beforeUniqueText = "Visiteurs uniques : ";
+$beforeUniqueText = "<li>Visiteurs uniques : ";
 
 // Display hits on this page:
 //   0 = No
@@ -55,7 +55,7 @@ $display = 0;
 
 // Only change this if you are recording both values.
 // Separator for unique and all hits display - use HTML tags! (line break is default)
-$separator = "</li><li>";
+$separator = "<br \>";
 
 // Default would output:
 //   Visits: 10
