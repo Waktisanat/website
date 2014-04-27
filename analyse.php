@@ -5,7 +5,6 @@ ini_set('display_startup_errors','On');
   require_once('classes/item.class.php'); 
   require_once('classes/recette.class.php'); 
   include_once('parts/pagination.php' );
-  include_once('parts/display.php' );
 
     $currentMenu = "tarif";
         
@@ -83,6 +82,20 @@ ini_set('display_startup_errors','On');
 		print("</select>");
   }  
   
+  function display_tendency($item) {   
+      if (is_object($item->price)) {
+          print "<a href=\"hdvhistory.php?id=".$item->id."\">";
+          $mid = ($item->price->min+$item->price->max)/2;
+          if ($mid < $item->price->avg) {
+              print "<img class=\"arr_down\" >";
+          } else if ($mid > $item->price->avg) {
+              print "<img class=\"arr_up\" >";
+          } else {
+              print "<img class=\"arr_egal\" >";
+          }
+          print "</a>";
+      }      
+  } 
   /*-----------------------------------------------*/
   /*              UTILITY FUNCTIONS                */
   /*-----------------------------------------------*/

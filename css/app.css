@@ -113,6 +113,33 @@ table tr th, table tr td {
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=0, Color='#222')";
 }
 
+.buildnumber  {
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    text-shadow: black 1px 1px 4px;
+    vertical-align: bottom;
+    height: auto;
+    background-color: inherit;
+    border: 0px;
+}
+select.buildnumber option {
+    color:black;
+}
+
+.buildbox {
+}
+
+.blinkbox {
+    -webkit-transition: background 1.0s ease-in-out;
+    -moz-transition:    background 1.0s ease-in-out;
+    -ms-transition:     background 1.0s ease-in-out;
+    transition:         background 1.0s ease-in-out;
+}
+
+
 /**************************************************/
 /*          C U S T O M   C O L O R S             */
 /**************************************************/
@@ -179,7 +206,7 @@ table tbody tr:nth-of-type(even) {
     background: #3560A1;  /* bg + 20 lum */
 }
 table tbody tr:nth-of-type(odd) {
-    background: #2A4A85;  
+    background: inherit;  
 }
 table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
     color:white;
@@ -213,7 +240,12 @@ span.green {
 span.red {
     color:tomato;
 }
-
+.buildbox:hover{
+    background:lightgray;
+}
+.blinklight{
+    background:lightgray;
+}
 
 ul.menu_short,
 .search_short {

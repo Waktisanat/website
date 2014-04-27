@@ -82,7 +82,7 @@ class AdvancedFilter {
         $f1 = array();
         if (!is_null($this->type1)) { $f1[] = "type1='".$this->type1."'"; }
         if (!is_null($this->type2)) { $f1[] = "type2='".$this->type2."'"; }
-        if (!is_null($this->type3)) { $f1[] = "type3='".$this->type3."'"; }
+        if (!is_null($this->type3)) { $f1[] = "type3 in (".$this->type3.") "; }
         
         if ($this->min != "") { $f1[] = "level>='".$this->min."'"; }
         if ($this->max != "") { $f1[] = "level<='".$this->max."'"; }
