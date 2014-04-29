@@ -189,9 +189,9 @@ span.level {
     font-size:60%;
     color:Gray;
 }
-span.infobulle span.level {
-    font-size:60%;
-    color:gray;
+span.infobulle {
+    font-size:80%;
+    color:lightgray;
 }
 table {
     background:none;
