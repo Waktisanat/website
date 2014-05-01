@@ -175,6 +175,34 @@ class Item {
         } 
         return $this->caracs;
     }
+    public static function get_pano_bonus_caracteristics($itemList) {
+        $ret = array();
+        if (is_array($itemList)) {
+            $set = array();
+            foreach ($itemList as $equ) {
+                if (is_object($equ)) { $set[] = $equ->id; }
+            }
+            $sql = "Select P1.*,P2.nbparts,P2.effect,CARACS.* from ( "
+                  ."  select panoplie, count(*) as cnt1 from PANOITEMS "
+                  ."  where item in (".implode(",",$set).") "
+                  ."  group by panoplie "
+                  .") as P1 "
+                  ."LEFT JOIN PANOPARTS as P2 on (P1.panoplie=P2.pano AND P1.cnt1 >= P2.nbparts) "
+                  ."LEFT JOIN CARACS on P2.carac=CARACS.id ";
+            //print $sql."<br>";
+            $req = BDD::get()->prepare($sql);
+            $req->execute();
+            $response = $req->fetchAll();
+            foreach ($response as $r) {
+                if ($r['id'] != "") {
+                    $ret[] = new Caracteristic($r);
+                }
+                
+            }    
+        }
+        return $ret;
+    }
+    
     /** --------- get the last price of an item ------------- **/                        
     public function get_drops() {
         if (!isset($this->drops)) {
@@ -325,17 +353,21 @@ class Item {
     }
     
     /** --------- get all rareties ------------- **/ 
-    public static function get_sql_item_list($sql_req) {
+    public static function get_sql_item_list($sql_req, $limit=0) {
         $ret = array();
         $req = BDD::get()->prepare($sql_req); 
 		    $req->execute();
         $respList = $req->fetchAll();
+        $cnt = 0;
         foreach($respList as $resp) {
             $item = new Item();
             $item->init($resp);
             $ret[] = $item;
+            if (($cnt++ >= $limit)&&($limit > 0)) {
+                break;
+            }
         }
-        return $ret;
+        return array($ret, count($respList));
     }
 
 }                     

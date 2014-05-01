@@ -4,15 +4,18 @@ define('__ROOT__', dirname(dirname(__FILE__)));
 class BDD {
     
     private $bdd;
+    private $count;
     private static $singleton;
   
     private function BDD() {
         include(__ROOT__.'/connect_base.php.ini'); 
         $this->bdd = $bdd;
+        $this->count = 0;
     }
     
     public static function get() {
         $inst = self::getInstance();
+        $inst->count++;
         return $inst->bdd;
     }
     
@@ -21,6 +24,11 @@ class BDD {
             self::$singleton = new BDD();
         }
         return self::$singleton;    
+    }
+    
+    public static function getCount() {
+        $inst = self::getInstance();
+        return $inst->count;
     }
     
     public static function get_last_item_import() {

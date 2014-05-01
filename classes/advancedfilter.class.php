@@ -18,7 +18,7 @@ class AdvancedFilter {
     var $carnum;
     var $caracs;
     var $carand;
-    
+        
     public function AdvancedFilter($GET) {
         $this->page = (isset($GET{'page'} )) ? $GET{'page'} : 0;
   
@@ -45,6 +45,7 @@ class AdvancedFilter {
            }  
         }
         $this->carnum = count($this->caracs);
+        $this->limit = $limit;
     }
 
 

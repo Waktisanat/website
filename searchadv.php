@@ -17,8 +17,9 @@
 
   $args = new AdvancedFilter($_GET);
   $sql = $args->get_items_request();    
-	$list = Item::get_sql_item_list($sql);
-  $countItem = count($list);
+	$result = Item::get_sql_item_list($sql);
+	$list = $result[0];
+  $countItem = $result[1];
   
   $dummy = ($countItem > 0) ? $list[0] : new Item();
   if ($countItem == 0) {
