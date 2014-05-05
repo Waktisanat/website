@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*----------------------------
 
@@ -72,7 +72,7 @@ $separator = "<br \>";
 $log_file = dirname(__FILE__) . '/' . $lf_name;
 
 //Check for "?display=true" in URL.
-if ($_GET['display'] == "true") {
+if ( isset( $_GET['display'] ) && $_GET['display'] == "true") {
 	//Show include() info.
 	die("<pre>&#60;? include(\"" . dirname(__FILE__) . '/' . basename(__FILE__) . "\"); ?&#62;</pre>");
 } else {

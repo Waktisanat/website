@@ -236,9 +236,8 @@ class Item {
         $ret = "";
         $item = new Item();
         $i = $item->getCategoryId($category);
-        $n = self::$ITEMTYPENUMS[$i];
-        if (is_numeric($n)) {
-            $ret = "/images/category/".$n.".png";
+        if ( isset( self::$ITEMTYPENUMS[$i] ) && is_numeric( self::$ITEMTYPENUMS[$i] ) ) {
+            $ret = "/images/category/".self::$ITEMTYPENUMS[$i].".png";
         } else {
             $ret = "/images/category/cat_".$category.".png";
         }

@@ -10,7 +10,7 @@ ini_set('display_startup_errors','On');
   //print_r($item);
 ?>
 <doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="fr">
 <?php include( 'page/head.php' ); ?>
 <body>
 <script type='text/javascript' src='js/jquery-2.1.0.min.js'></script>

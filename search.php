@@ -46,10 +46,10 @@
   if ($countItem == 0) {
   /*************************************************************************/
 ?>
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<html class="no-js" lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>Erreur: aucun objet trouvé</title>
     </head>
     <body>
@@ -63,10 +63,10 @@
     $url = "item.php?id=".$list[0]->id;
   /*************************************************************************/
 ?>
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<html class="no-js" lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta http-equiv="refresh" content="1;url=<?php print $url; ?>">
         <script type="text/javascript">
             window.location.href = "<?php print $url; ?>";
@@ -85,7 +85,7 @@
 ?>
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="fr">
 <?php include( 'page/head.php' ); ?>
 <body>
 <?php include( 'page/page_header.php' ); ?>

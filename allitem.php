@@ -46,7 +46,7 @@
 ?>
 
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="fr">
 <?php include( 'page/head.php' ); ?>
 <body>
 
