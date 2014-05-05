@@ -54,6 +54,7 @@ class Caracteristic {
                 $res[] = $c;
             }
         }
+        self::sort_carac_array($res);
         return $res;
     }
     
@@ -104,7 +105,26 @@ class Caracteristic {
                 $second[] = $c;
             }
         }
+        self::sort_carac_array($first);
+        self::sort_carac_array($second);
         //print "<br>F1:".count($first)."<br>F2:".count($second);
     }
+    
+    private static function sort_carac_array(&$caracs) {
+        $found = true;
+        $count = count($caracs);
+        while ($found == true) {
+            $found = false;
+            for ($i = 0; $i < $count - 1; $i++) {
+                if ($caracs[$i]->id > $caracs[$i+1]->id) {
+                    $found = true;
+                    $tmp = $caracs[$i];
+                    $caracs[$i] = $caracs[$i+1];
+                    $caracs[$i+1] = $tmp;
+                }
+            }
+        }
+    }
+    
 }
 ?>
