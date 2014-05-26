@@ -7,10 +7,19 @@ $(document).ready(function() {
       });
       
     showLoader();
-      
-    $( "a" ).click(function() {
+
+    $("a:not('.noLoader')").click(function (e) {
         showLoader();
     });
+
+    $("a.cookie").click(function () {
+        $.cookie( $(this).data('cookie-name'), $(this).data('cookie-value'), { expires: 30 });
+
+    });
+});
+
+$(document).on('closed', '[data-reveal]', function () {
+    location.reload();
 });
 
 $(window).load( function(){

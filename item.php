@@ -39,8 +39,6 @@
     }
     setcookie( $WAKFUFAV, implode ( "," , $favs ), strtotime( '+30 days' ) );
 	}
-  
-
 ?>
 <!doctype html>
 <html class="no-js" lang="fr">
@@ -49,19 +47,63 @@
 <?php include( 'page/page_header.php' ); ?>
     <div class="row">
         <div class="large-12 columns">
-				<?php 
-					echo "<h1>".$currentItem->name; 
-					if ( $currentItem->image != null ) {
-            $src = $currentItem->image;
-            $big = str_replace("/21/", "/42/",$src);
-            if (file_exists("./images".$big)) {
-                $src = $big;
-            }
-						echo ' <img src="./images'.$src.'" width="42" height="42"  /> ';
-					}
-					//echo '<small>(Id&nbsp;:&nbsp;'.$currentItem->id.')</small>';
-          echo "</h1>";
-				?>
+            <div class="right">
+                <ul class="inline-list">
+                    <li><a href="mycraft.php" title="Voir ma liste de craft"><i class="fa fa-gavel fa-2x"></i></a></li>
+                    <li class="atelier"></li>
+                </ul>
+            </div>
+
+            <?php
+                $image = "";
+                if ( $currentItem->image != null ) {
+                    $src = $currentItem->image;
+                    $big = str_replace("/21/", "/42/",$src);
+                    if (file_exists("./images".$big)) {
+                        $src = $big;
+                    }
+                    $image = '<img src="./images'.$src.'" width="42" height="42"  />';
+                }
+
+                echo '<h1>'.$currentItem->name.' '.$image.'</h1>';
+            ?>
+
+            <?php
+                if (count( $myRecette ) && is_object($myRecette[0]))
+                {
+            ?>
+                <script type="text/javascript">
+                    $(".atelier").html("");
+
+                    if( CheckItemAlreadyStorage( <?php echo $currentItem->id; ?> ) == true )
+                    {
+                        //$(".atelier").html("<p>L'objet <?php echo $currentItem->name; ?> est déjà dans votre liste de Craft.</p><a href='./mycraft.php' class='button tiny'>Voir ma liste de craft</a>");
+                    }
+                    else
+                    {
+                        <?php
+                            foreach($ingredients as $ingredient)
+                            {
+                                $stocks[$ingredient->item->id] = 0;
+                            }
+                        ?>
+
+                        $(".atelier").html('<div class="craft-add"><a title="Ajouter l\'objet <?php echo $currentItem->name; ?> à ma liste de craft" id="addCraft" data-reveal-id="add-craft" href="#" class="noLoader"><i class="fa fa-plus-square-o fa-2x"></i></a></div>');
+                        $(".atelier").append('<div id="add-craft" class="reveal-modal tiny" data-reveal>'+
+                                             '<p>L\'item <?php echo $currentItem->name; ?> a été ajouté à votre liste de craft.</p>'+
+                                             '<a href="mycraft.php" class="button tiny">Voir ma liste de craft</a>'+
+                                             '<a class="close-reveal-modal noLoader">&#215;</a>'+
+                                             '</div>');
+
+                        $("#addCraft").bind("click", function(){
+                            AjoutCraft( <?php echo $currentItem->id; ?>, '1', <?php echo json_encode( $stocks ); ?> );
+                        });
+                    }
+                </script>
+            <?php
+                }
+            ?>
+
         </div>
     </div>
 
@@ -135,28 +177,28 @@
               print "<a class=\"button micro secondary radius right\" href=\"./hdvhistory.php?id=".$currentItem->id."\" style=\"background:none;\" >";
               print "<img src=\"./images/chart.png\" ></a>";
           }
-          
-          
+
+
                     /* Lien vers l'encyclo */
                     $url = "http://www.wakfu.com/fr/mmorpg/encyclopedie/objets/";
-			
+
         			if( !empty( $currentItem->type1 ) )
         			{
         			    $url .= trim( $currentItem->getCategoryOffId( $currentItem->type1 ) );
         			}
-        			
+
         			if( !empty( $currentItem->type2 ) )
         			{
         			    $url .= "/".trim( $currentItem->getCategoryOffId( $currentItem->type2 ) );
         			}
-        			
+
         			if( !empty( $currentItem->type3 ) )
         			{
         			    $url .= "/".trim( $currentItem->getCategoryOffId( $currentItem->type3 ) );
         			}
-        			
+
         			$url .= "/".$currentItem->off_id;
-        			
+
         			print "<p><br/><a href=".$url." target='_blank'>Voir sur l'encyclopédie Officielle</a></p>";
 				?>
 			</div>

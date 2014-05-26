@@ -234,10 +234,10 @@ span.droppable {
 span.collectable {
     color:Lime;
 }
-span.green {
+.green {
     color:Lime;
 }
-span.red {
+.red {
     color:tomato;
 }
 .buildbox:hover{
